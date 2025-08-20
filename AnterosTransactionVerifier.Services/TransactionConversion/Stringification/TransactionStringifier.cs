@@ -8,6 +8,8 @@ public class TransactionStringifier : SimplifiedConverter<Transaction, string>, 
 {
     protected override bool ConvertSafe(Transaction sourceItem, [MaybeNullWhen(false), NotNullWhen(true)] out string result, [MaybeNullWhen(true), NotNullWhen(false)] out Exception exception)
     {
-        throw new NotImplementedException();
+        result = string.Join(';', new string[]{ sourceItem.Date.ToString(), sourceItem.Amount.ToString(), sourceItem.Description });
+        exception = null;
+        return true;
     }
 }
