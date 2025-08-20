@@ -15,6 +15,6 @@ public class FileTransactionReader : ITransactionReader
         _parser = parser ?? throw new ArgumentNullException(nameof(parser));
     }
 
-    public Task<IEnumerable<Transaction>> ReadAllTransactions()
-        => Task.Run(() => _fileReader.ReadAllLines().Select(_parser.Parse));
+    public IEnumerable<Transaction> ReadAllTransactions()
+        => _fileReader.ReadAllLines().Select(_parser.Parse);
 }

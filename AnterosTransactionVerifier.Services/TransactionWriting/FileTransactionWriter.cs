@@ -15,13 +15,9 @@ public class FileTransactionWriter : ITransactionWriter
         _transactionStringifier = transactionStringifier ?? throw new ArgumentNullException(nameof(transactionStringifier));
     }
 
-    public Task Write(Transaction transaction)
+    public void Write(Transaction transaction) => Write(new[] { transaction });
+    public void Write(IEnumerable<Transaction> transactions)
     {
-        throw new NotImplementedException();
-    }
-
-    public Task Write(IEnumerable<Transaction> transactions)
-    {
-        throw new NotImplementedException();
+        _fileWriter.WriteAllLines(transactions.Select(_transactionStringifier.Convert));
     }
 }

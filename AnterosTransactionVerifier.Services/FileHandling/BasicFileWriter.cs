@@ -16,6 +16,11 @@ public class BasicFileWriter : IStaticFileWriter
 
     public void WriteAllLines(IEnumerable<string> lines)
     {
+        if (!File.Exists(_filePath))
+        {
+            File.Create(_filePath).Dispose();
+        }
+
         var stringBuilder = new StringBuilder();
         
         if (!string.IsNullOrEmpty(_firstLine))
