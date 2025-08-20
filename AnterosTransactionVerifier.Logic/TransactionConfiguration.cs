@@ -2,6 +2,7 @@
 
 public record TransactionConfiguration
 {
+    public required string Separator { get; set; }
     public required string TransactionFileLocation { get; set; }
     public required string Name { get; set; }
     public required bool SkipFirstLine { get; set; }
