@@ -1,13 +1,6 @@
-﻿namespace AnterosTransactionVerifier;
+﻿namespace AnterosTransactionVerifier.Logic;
 
-internal class Configuration
-{
-    public required TransactionConfiguration Bank { get; set; }
-    public required TransactionConfiguration Bookkeeping { get; set; }
-    public required string OutputFileLocation { get; set; }
-}
-
-public class TransactionConfiguration
+public record TransactionConfiguration
 {
     public required string TransactionFileLocation { get; set; }
     public required string Name { get; set; }
