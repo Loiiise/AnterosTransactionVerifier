@@ -1,7 +1,7 @@
 ﻿using AnterosTransactionVerifier.Logic;
 using System.Diagnostics.CodeAnalysis;
 
-namespace AnterosTransactionVerifier.Services.TransactionParsingService;
+namespace AnterosTransactionVerifier.Services.TransactionParsing;
 
 public interface ITransactionParser
 {

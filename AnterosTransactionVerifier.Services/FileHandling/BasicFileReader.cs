@@ -1,6 +1,6 @@
 ﻿namespace AnterosTransactionVerifier.Services.FileHandling;
 
-public class BasicFileReader : IFileReader
+public class BasicFileReader : IStaticFileReader
 {
     private readonly string _filePath;
     private readonly bool _skipFirstLine;

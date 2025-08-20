@@ -1,6 +1,6 @@
 ﻿namespace AnterosTransactionVerifier.Services.FileHandling;
 
-public interface IFileReader
+public interface IStaticFileReader
 {
     IEnumerable<string> ReadAllLines();
 }

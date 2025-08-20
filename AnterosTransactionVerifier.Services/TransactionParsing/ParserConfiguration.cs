@@ -1,4 +1,4 @@
-﻿namespace AnterosTransactionVerifier.Services.TransactionParsingService;
+﻿namespace AnterosTransactionVerifier.Services.TransactionParsing;
 
 public record ParserConfiguration
 {

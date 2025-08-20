@@ -6,10 +6,10 @@ namespace AnterosTransactionVerifier.Services.TransactionReading;
 
 public class BasicFileReader : ITransactionReader
 {
-    private readonly IFileReader _fileReader;
+    private readonly IStaticFileReader _fileReader;
     private readonly ITransactionParser _parser;
 
-    public BasicFileReader(IFileReader fileReader, ITransactionParser parser)
+    public BasicFileReader(IStaticFileReader fileReader, ITransactionParser parser)
     {
         _fileReader = fileReader ?? throw new ArgumentNullException(nameof(fileReader));
         _parser = parser ?? throw new ArgumentNullException(nameof(parser));
