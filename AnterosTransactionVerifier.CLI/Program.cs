@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using AnterosTransactionVerifier.Services.FileReading;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -16,6 +17,8 @@ internal class Program
         var configuration = config.Get<Configuration>()!;
 
         HostApplicationBuilder builder = Host.CreateApplicationBuilder(args);
+
+        builder.Services.AddSingleton<IFileReader, BasicFileReader>();
 
         builder.Services.AddHostedService<TransactionVerificator>();
 

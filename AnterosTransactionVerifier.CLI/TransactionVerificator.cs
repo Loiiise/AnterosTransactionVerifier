@@ -1,4 +1,5 @@
-﻿using AnterosTransactionVerifier.Services.File;
+﻿using AnterosTransactionVerifier.Services.FileReading;
+using AnterosTransactionVerifier.Services.FileWriting;
 using AnterosTransactionVerifier.Services.TransactionParsingService;
 using Microsoft.Extensions.Hosting;
 
@@ -6,14 +7,14 @@ namespace AnterosTransactionVerifier.CLI;
 
 internal class TransactionVerificator : BackgroundService
 {
-    private readonly IParser _parser;
+    private readonly ITransactionParser _parser;
     private readonly IFileReader _fileReader;
-    private readonly IFileWriter _fileWriter;
+    private readonly ITransactionWriter _fileWriter;
 
     public TransactionVerificator(
-        IParser parser,
+        ITransactionParser parser,
         IFileReader fileReader,
-        IFileWriter fileWriter
+        ITransactionWriter fileWriter
         )
     {
         _parser = parser;

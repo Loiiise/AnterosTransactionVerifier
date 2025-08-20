@@ -1,4 +1,4 @@
-﻿namespace AnterosTransactionVerifier.Services.File;
+﻿namespace AnterosTransactionVerifier.Services.FileWriting;
 
 public interface IFileWriter
 {
