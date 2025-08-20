@@ -5,9 +5,9 @@ namespace AnterosTransactionVerifier.Services.TransactionParsingService;
 
 public interface ITransactionParser
 {
-    Transaction Parse(string rawTransaction, TransactionConfiguration configuration);
-    IEnumerable<Transaction> Parse(IEnumerable<string> rawTransactions, TransactionConfiguration configuration);
+    Transaction Parse(string rawTransaction);
+    IEnumerable<Transaction> Parse(IEnumerable<string> rawTransactions);
 
-    bool TryParse(string rawTransaction, TransactionConfiguration configuration, [MaybeNullWhen(false), NotNullWhen(true)] out Transaction result);
-    bool TryParse(IEnumerable<string> rawTransactions, TransactionConfiguration configuration, [MaybeNullWhen(false), NotNullWhen(true)] out IEnumerable<Transaction> result);
+    bool TryParse(string rawTransaction, [MaybeNullWhen(false), NotNullWhen(true)] out Transaction result);
+    bool TryParse(IEnumerable<string> rawTransactions, [MaybeNullWhen(false), NotNullWhen(true)] out IEnumerable<Transaction> result);
 }
