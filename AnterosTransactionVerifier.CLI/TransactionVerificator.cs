@@ -1,25 +1,24 @@
-﻿using AnterosTransactionVerifier.Services.FileReading;
-using AnterosTransactionVerifier.Services.FileWriting;
-using AnterosTransactionVerifier.Services.TransactionParsingService;
+﻿using AnterosTransactionVerifier.Services.TransactionReading;
+using AnterosTransactionVerifier.Services.TransactionWriting;
 using Microsoft.Extensions.Hosting;
 
 namespace AnterosTransactionVerifier.CLI;
 
 internal class TransactionVerificator : BackgroundService
 {
-    private readonly ITransactionParser _parser;
-    private readonly IFileReader _fileReader;
-    private readonly ITransactionWriter _fileWriter;
+    private readonly ITransactionReader _bankTransactionReader;
+    private readonly ITransactionReader _bookkeepingTransactionReader;
+    private readonly ITransactionWriter _transactionWriter;
 
     public TransactionVerificator(
-        ITransactionParser parser,
-        IFileReader fileReader,
-        ITransactionWriter fileWriter
+        ITransactionReader bankTransactionReader,
+        ITransactionReader bookkeepingTransactionReader,
+        ITransactionWriter transactionWriter
         )
     {
-        _parser = parser;
-        _fileReader = fileReader;
-        _fileWriter = fileWriter;
+        _bankTransactionReader = bankTransactionReader;
+        _bookkeepingTransactionReader = bookkeepingTransactionReader;
+        _transactionWriter = transactionWriter;
     }
 
     protected override Task ExecuteAsync(CancellationToken stoppingToken)

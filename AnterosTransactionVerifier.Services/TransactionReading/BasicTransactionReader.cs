@@ -1,15 +1,15 @@
 ﻿using AnterosTransactionVerifier.Logic;
 using AnterosTransactionVerifier.Services.FileHandling;
-using AnterosTransactionVerifier.Services.TransactionParsingService;
+using AnterosTransactionVerifier.Services.TransactionConversion.Parsing;
 
 namespace AnterosTransactionVerifier.Services.TransactionReading;
 
-public class BasicFileReader : ITransactionReader
+public class BasicTransactionReader : ITransactionReader
 {
     private readonly IStaticFileReader _fileReader;
     private readonly ITransactionParser _parser;
 
-    public BasicFileReader(IStaticFileReader fileReader, ITransactionParser parser)
+    public BasicTransactionReader(IStaticFileReader fileReader, ITransactionParser parser)
     {
         _fileReader = fileReader ?? throw new ArgumentNullException(nameof(fileReader));
         _parser = parser ?? throw new ArgumentNullException(nameof(parser));

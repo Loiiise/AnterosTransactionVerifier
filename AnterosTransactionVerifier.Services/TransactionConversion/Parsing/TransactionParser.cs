@@ -4,11 +4,11 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace AnterosTransactionVerifier.Services.TransactionConversion.Parsing;
 
-internal class TransactionParser : SimplifiedConverter<string, Transaction>, ITransactionParser
+public class TransactionParser : SimplifiedConverter<string, Transaction>, ITransactionParser
 {
-    private readonly TransactionConfiguration _transactionConfiguration;
+    private readonly ParserConfiguration _transactionConfiguration;
 
-    protected TransactionParser(TransactionConfiguration transactionConfiguration)
+    public TransactionParser(ParserConfiguration transactionConfiguration)
     {
         _transactionConfiguration = transactionConfiguration;
     }

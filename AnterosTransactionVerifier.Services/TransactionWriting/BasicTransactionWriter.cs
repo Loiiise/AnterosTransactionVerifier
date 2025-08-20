@@ -2,7 +2,7 @@
 
 namespace AnterosTransactionVerifier.Services.TransactionWriting;
 
-public class BasicFileWriter : ITransactionWriter
+public class BasicTransactionWriter : ITransactionWriter
 {
     public Task Write(Transaction transaction)
     {
