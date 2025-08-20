@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
-namespace AnterosTransactionVerifier;
+namespace AnterosTransactionVerifier.CLI;
 
 internal class Program
 {
@@ -13,8 +15,11 @@ internal class Program
 
         var configuration = config.Get<Configuration>()!;
 
-        Console.WriteLine($"Bank file: {configuration.Bank.TransactionFileLocation}");
-        Console.WriteLine($"Bookkeeping file: {configuration.Bookkeeping.TransactionFileLocation}");
-        Console.WriteLine($"Output file: {configuration.OutputFileLocation}");
+        HostApplicationBuilder builder = Host.CreateApplicationBuilder(args);
+
+        builder.Services.AddHostedService<TransactionVerificator>();
+
+        using IHost host = builder.Build();
+        host.Run();
     }
 }

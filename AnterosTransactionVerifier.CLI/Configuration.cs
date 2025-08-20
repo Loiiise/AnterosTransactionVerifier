@@ -1,6 +1,6 @@
 ﻿using AnterosTransactionVerifier.Logic;
 
-namespace AnterosTransactionVerifier;
+namespace AnterosTransactionVerifier.CLI;
 
 internal class Configuration
 {
