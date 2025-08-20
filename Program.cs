@@ -13,8 +13,8 @@ internal class Program
 
         var configuration = config.Get<Configuration>()!;
 
-        Console.WriteLine($"Bank file: {configuration.BankTransactionFileLocation}");
-        Console.WriteLine($"Bookkeeping file: {configuration.BookkeepingTransactionFileLocation}");
+        Console.WriteLine($"Bank file: {configuration.Bank.TransactionFileLocation}");
+        Console.WriteLine($"Bookkeeping file: {configuration.Bookkeeping.TransactionFileLocation}");
         Console.WriteLine($"Output file: {configuration.OutputFileLocation}");
     }
 }
