@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnterosTransactionVerifier.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnterosTransactionVerifier.Services", "AnterosTransactionVerifier.Services\AnterosTransactionVerifier.Services.csproj", "{9347B1DE-48A6-4730-B2ED-6F54D719AB28}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSVInputCustomSanitizer", "CSVInputCustomSanitizer\CSVInputCustomSanitizer.csproj", "{5A51CA37-3053-4082-B171-7DE80F8983D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{9347B1DE-48A6-4730-B2ED-6F54D719AB28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9347B1DE-48A6-4730-B2ED-6F54D719AB28}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9347B1DE-48A6-4730-B2ED-6F54D719AB28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A51CA37-3053-4082-B171-7DE80F8983D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A51CA37-3053-4082-B171-7DE80F8983D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A51CA37-3053-4082-B171-7DE80F8983D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A51CA37-3053-4082-B171-7DE80F8983D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
