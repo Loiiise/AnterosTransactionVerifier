@@ -31,9 +31,9 @@ if (outputConfiguration.SkipFirstLine)
     {
         stringBuilder.AppendLine(File.ReadLines(inputConfiguration.TransactionFileLocation).Take(1).First());
     }
+    // Otherwise write dummyline
     else
     {
-        // Otherwise write dummyline
         stringBuilder.AppendLine("Skipping unknown header line. Please check config files.");
     }
 }
@@ -67,6 +67,11 @@ foreach (var line in inputConfiguration.SkipFirstLine ?
 
     Console.WriteLine(generated);
     stringBuilder.AppendLine(generated);
+}
+
+if (partialLine is not null)
+{
+    throw new ArgumentException("Incomplete data");
 }
 
 File.WriteAllText(outputConfiguration.TransactionFileLocation, stringBuilder.ToString());
