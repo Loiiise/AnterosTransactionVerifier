@@ -16,7 +16,7 @@ public class TransactionParser : SimplifiedConverter<string, Transaction>, ITran
     protected override bool ConvertSafe(string sourceItem, [MaybeNullWhen(false), NotNullWhen(true)] out Transaction result, [MaybeNullWhen(true), NotNullWhen(false)] out Exception exception)
     {
         result = null;
-        var items = sourceItem.Split(_parserConfiguration.Separator);
+        var items = sourceItem.ItemsFromCSVLine(_parserConfiguration.Separator);
 
         if (_parserConfiguration.DateIndex >= items.Length ||
             _parserConfiguration.AmountIndex >= items.Length ||

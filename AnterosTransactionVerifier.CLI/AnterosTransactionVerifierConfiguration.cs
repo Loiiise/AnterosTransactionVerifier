@@ -3,7 +3,7 @@ using AnterosTransactionVerifier.Services.TransactionReading;
 
 namespace AnterosTransactionVerifier.CLI;
 
-internal class Configuration
+internal class AnterosTransactionVerifierConfiguration
 {
     public required TransactionConfiguration Bank { get; set; }
     public required TransactionConfiguration Bookkeeping { get; set; }

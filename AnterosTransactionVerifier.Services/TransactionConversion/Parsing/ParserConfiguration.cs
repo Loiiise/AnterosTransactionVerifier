@@ -19,5 +19,5 @@ public static class TransactionConfigurationExtensions
             AmountIndex = transactionConfiguration.AmountColumn,
             DateIndex = transactionConfiguration.DateColumn,
             DescriptionIndex = transactionConfiguration.DescriptionColumn,
-        };    
+        };
 }

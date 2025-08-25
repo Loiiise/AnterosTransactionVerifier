@@ -9,7 +9,7 @@ var fullConfig = new ConfigurationBuilder()
     .SetBasePath(Directory.GetCurrentDirectory())
     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
     .Build();
-var configuration = fullConfig.Get<Configuration>()!;
+var configuration = fullConfig.Get<AnterosTransactionVerifierConfiguration>()!;
 
 var transactionWriter = new FileTransactionWriter(
     new BasicFileWriter(
